@@ -1,46 +1,154 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: #f4f4f4;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Header Styles */
+/* Header */
 header {
-    background: #333;
+    background-color: #222;
     color: white;
-    padding: 1rem;
+    padding: 20px 0;
     text-align: center;
 }
 
-header nav a {
-    color: white;
-    margin: 0 10px;
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
     text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+header nav ul li a:hover {
+    color: #f39c12;
 }
 
-/* Section Styles */
+/* Section Titles */
+section h2 {
+    font-size: 1.8rem;
+    color: #444;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+/* Buttons */
+button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+/* Inputs and Forms */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+}
+
+form button {
+    width: 100%;
+}
+
+/* Sections */
 section {
     padding: 20px;
-    margin: 10px;
-    background: white;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
+    background-color: #222;
     color: white;
-    position: fixed;
+    padding: 15px;
+    font-size: 0.9rem;
+    position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 20px;
+}
+
+/* Links */
+a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Search Results */
+#searchResults {
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
