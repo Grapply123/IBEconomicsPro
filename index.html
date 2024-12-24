@@ -20,15 +20,25 @@
         </nav>
     </header>
 
+    <!-- Search Bar -->
+    <section id="search">
+        <h2>Search the Site</h2>
+        <input type="text" id="searchBar" placeholder="Search resources...">
+        <button onclick="searchSite()">Search</button>
+        <p id="searchResults"></p>
+    </section>
+
     <!-- Resources Section -->
     <section id="resources">
         <h2>IB Economics Resources</h2>
-        <p>Explore study guides, tips, and examples to excel in IB Economics.</p>
-        <ul>
-            <li><a href="#">Microeconomics Study Guide</a></li>
-            <li><a href="#">Macroeconomics Notes</a></li>
-            <li><a href="#">International Trade Overview</a></li>
-        </ul>
+        <button onclick="toggleSection('resourcesContent')">Show/Hide Resources</button>
+        <div id="resourcesContent">
+            <ul>
+                <li><a href="#">Microeconomics Study Guide</a></li>
+                <li><a href="#">Macroeconomics Notes</a></li>
+                <li><a href="#">International Trade Overview</a></li>
+            </ul>
+        </div>
     </section>
 
     <!-- Internal Assessment Help Section -->
@@ -45,19 +55,16 @@
     <!-- Exam Tips Section -->
     <section id="exam-tips">
         <h2>Exam Tips</h2>
-        <p>Prepare effectively for Papers 1, 2, and 3 with these strategies:</p>
-        <ol>
-            <li>How to manage your time during exams.</li>
-            <li>Tips for answering data response questions.</li>
-            <li>Common pitfalls to avoid in Paper 3 calculations.</li>
-        </ol>
+        <p id="randomTip">Click the button below for a random exam tip.</p>
+        <button onclick="generateTip()">Get a Tip</button>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Have questions or need assistance? Reach out to us:</p>
-        <form action="https://formspree.io/f/yourformid" method="POST">
+        <p>Email: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
+        <form id="contactForm" onsubmit="return validateForm()">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -65,4 +72,65 @@
             <input type="email" id="email" name="email" required>
 
             <label for="message">Message:</label>
-         
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 IB Economics Pro. Built for educational purposes. All rights reserved by the creator.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Search Functionality
+        function searchSite() {
+            const searchBar = document.getElementById('searchBar').value.toLowerCase();
+            const results = document.getElementById('searchResults');
+            const resources = ['Microeconomics Study Guide', 'Macroeconomics Notes', 'International Trade Overview'];
+
+            if (searchBar === '') {
+                results.innerText = 'Please enter a search term.';
+                return;
+            }
+
+            const matches = resources.filter(item => item.toLowerCase().includes(searchBar));
+            results.innerText = matches.length ? `Results: ${matches.join(', ')}` : 'No results found.';
+        }
+
+        // Toggle Section Visibility
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Generate Random Tip
+        function generateTip() {
+            const tips = [
+                'Read the question carefully before answering.',
+                'Use diagrams to support your arguments.',
+                'Time your answers to avoid rushing at the end.',
+            ];
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            document.getElementById('randomTip').innerText = randomTip;
+        }
+
+        // Validate Contact Form
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('All fields are required!');
+                return false;
+            }
+
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+</body>
+</html>
