@@ -1,10 +1,13 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    background: #f4f4f4;
 }
 
+/* Header Styles */
 header {
     background: #333;
     color: white;
@@ -12,14 +15,32 @@ header {
     text-align: center;
 }
 
-nav a {
+header nav a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
 }
 
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
 section {
     padding: 20px;
     margin: 10px;
-    background: #f4f4f4;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
