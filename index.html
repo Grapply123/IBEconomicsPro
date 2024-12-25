@@ -9,104 +9,106 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>IB Economics Pro</h1>
-        <nav>
-            <ul>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#ia-help">IA Help</a></li>
-                <li><a href="#exam-tips">Exam Tips</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>IB Economics Pro</h1>
+            <nav>
+                <ul>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#ia-help">IA Help</a></li>
+                    <li><a href="#exam-tips">Exam Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Search Bar -->
-    <section id="search">
-        <h2>Search the Site</h2>
-        <input type="text" id="searchBar" placeholder="Search resources...">
-        <button onclick="searchSite()">Search</button>
-        <p id="searchResults"></p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Trusted Partner for IB Economics</h2>
+            <p>Expert resources and guidance to excel in IB Economics, Internal Assessments, and exams.</p>
+            <a href="#resources" class="btn">Get Started</a>
+        </div>
     </section>
 
     <!-- Resources Section -->
-    <section id="resources">
-        <h2>IB Economics Resources</h2>
-        <button onclick="toggleSection('resourcesContent')">Show/Hide Resources</button>
-        <div id="resourcesContent">
-            <ul>
-                <li><a href="#">Microeconomics Study Guide</a></li>
-                <li><a href="#">Macroeconomics Notes</a></li>
-                <li><a href="#">International Trade Overview</a></li>
-            </ul>
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>IB Economics Resources</h2>
+            <p>Explore our curated guides and notes to help you master IB Economics topics.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Microeconomics</h3>
+                    <p>Comprehensive study materials and practice questions for Microeconomics.</p>
+                    <a href="#" class="btn">View More</a>
+                </div>
+                <div class="card">
+                    <h3>Macroeconomics</h3>
+                    <p>Deep dive into Macroeconomics concepts with expert insights.</p>
+                    <a href="#" class="btn">View More</a>
+                </div>
+                <div class="card">
+                    <h3>International Trade</h3>
+                    <p>Understand the complexities of international trade and its real-world applications.</p>
+                    <a href="#" class="btn">View More</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Internal Assessment Help Section -->
-    <section id="ia-help">
-        <h2>Internal Assessment Help</h2>
-        <p>Learn how to structure and write a top-scoring IB Economics IA:</p>
-        <ul>
-            <li>Choosing a strong topic</li>
-            <li>Structuring your analysis</li>
-            <li>Tips for evaluation and diagrams</li>
-        </ul>
+    <section id="ia-help" class="section bg-light">
+        <div class="container">
+            <h2>Internal Assessment Help</h2>
+            <p>Step-by-step guidance to help you write a top-scoring Economics IA.</p>
+            <ul>
+                <li>Choosing and refining your topic</li>
+                <li>Structuring your analysis effectively</li>
+                <li>Tips for diagrams and evaluation</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Exam Tips Section -->
-    <section id="exam-tips">
-        <h2>Exam Tips</h2>
-        <p id="randomTip">Click the button below for a random exam tip.</p>
-        <button onclick="generateTip()">Get a Tip</button>
+    <section id="exam-tips" class="section">
+        <div class="container">
+            <h2>Exam Tips</h2>
+            <p>Practical tips to help you succeed in IB Economics exams.</p>
+            <button class="btn" onclick="generateTip()">Get a Random Tip</button>
+            <p id="randomTip"></p>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or need assistance? Reach out to us:</p>
-        <p>Email: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
-        <form id="contactForm" onsubmit="return validateForm()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us:</p>
+            <p>Email: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
 
-            <button type="submit">Submit</button>
-        </form>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 IB Economics Pro. Built for educational purposes. All rights reserved by the creator.</p>
+        <div class="container">
+            <p>© 2024 IB Economics Pro. Built for educational purposes. All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Search Functionality
-        function searchSite() {
-            const searchBar = document.getElementById('searchBar').value.toLowerCase();
-            const results = document.getElementById('searchResults');
-            const resources = ['Microeconomics Study Guide', 'Macroeconomics Notes', 'International Trade Overview'];
-
-            if (searchBar === '') {
-                results.innerText = 'Please enter a search term.';
-                return;
-            }
-
-            const matches = resources.filter(item => item.toLowerCase().includes(searchBar));
-            results.innerText = matches.length ? `Results: ${matches.join(', ')}` : 'No results found.';
-        }
-
-        // Toggle Section Visibility
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.style.display = section.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // Generate Random Tip
         function generateTip() {
             const tips = [
                 'Read the question carefully before answering.',
@@ -117,7 +119,6 @@
             document.getElementById('randomTip').innerText = randomTip;
         }
 
-        // Validate Contact Form
         function validateForm() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
