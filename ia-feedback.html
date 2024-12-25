@@ -3,108 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Feedback - Submit Your Draft</title>
+    <title>IA Feedback - Submit Your IA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <h1>EconIAPro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="guide.html">Complete IA Guide</a></li>
-                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                    <li><a href="key-concepts.html">Key Concepts</a></li>
-                    <li><a href="diagrams.html">Diagrams</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-                    <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
-                    <li><a href="tutoring.html">Tutoring</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="guide.html">Complete IA Guide</a></li>
+                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="diagrams.html">Diagrams</a></li>
+                <li><a href="evaluation.html">Evaluation</a></li>
+                <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
+                <li><a href="tutoring.html">Tutoring</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content -->
-    <section class="section">
-        <div class="container">
-            <h2>Submit Your IA Draft</h2>
-            <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time and complete your payment to confirm your order.</p>
-            <form id="feedback-form">
+    <main>
+        <section class="section">
+            <h1>Submit Your IA Draft</h1>
+            <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time, then follow the instructions to complete your payment via Cash App. We apologize for any inconvenience caused by the lack of direct card payment options.</p>
+            <p>
+                <strong>Why Cash App?</strong><br>
+                As a 17-year-old entrepreneur, I currently rely on Cash App for payments, as other platforms require bank account integration. I appreciate your understanding and support.
+            </p>
+            <p>
+                <strong>How to Pay with Cash App:</strong>
+                <ol>
+                    <li>Open your Cash App on your phone.</li>
+                    <li>Enter the payment amount based on your selected turnaround time (e.g., $20 for 24 hours).</li>
+                    <li>Send the payment to my $Cashtag: <strong>$EconIAPro</strong>.</li>
+                    <li>Include your full name in the payment note for reference.</li>
+                    <li>Click "Submit" on this form after sending the payment.</li>
+                </ol>
+            </p>
+        </section>
+
+        <!-- Submission Form -->
+        <section class="section">
+            <form id="feedback-form" method="post" action="https://formspree.io/f/mvggzzrk">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                <br><br>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required><br>
+
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                <br><br>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required><br>
+
                 <label for="turnaround">Turnaround Time:</label>
                 <select id="turnaround" name="turnaround" required>
-                    <option value="20">24 Hours - $20</option>
-                    <option value="15">48 Hours - $15</option>
-                    <option value="10">72 Hours - $10</option>
-                </select>
-                <br><br>
-                <label for="comments">Additional Comments:</label>
-                <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea>
-                <br><br>
-            </form>
-            <div id="paypal-button-container" style="margin-top: 20px;"></div>
-        </div>
-    </section>
+                    <option value="24 Hours - $20">24 Hours - $20</option>
+                    <option value="48 Hours - $15">48 Hours - $15</option>
+                    <option value="72 Hours - $10">72 Hours - $10</option>
+                </select><br>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea><br>
+
+                <input type="submit" value="Submit Form">
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
             <p>© 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
-        </div>
-    </footer>
-
-    <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AX2AxtUWuIvAIAuJS3SHNmA16P9T0gMYBIKm9IRUg3hP-mC5yPHFvXPjSXGgz3c_BbAv0chraLoa2h5_&currency=USD"></script>
-
-    <!-- PayPal Integration -->
-    <script>
-        const form = document.getElementById('feedback-form');
-        const paypalButtonContainer = document.getElementById('paypal-button-container');
-
-        let selectedAmount = 20; // Default amount for 24-hour turnaround
-
-        // Update the amount based on the selected option
-        document.getElementById('turnaround').addEventListener('change', (event) => {
-            selectedAmount = event.target.value;
-        });
-
-        // PayPal Buttons Integration
-        paypal.Buttons({
-            createOrder: (data, actions) => {
-                // Validate form before creating order
-                if (!form.reportValidity()) {
-                    alert("Please fill out all required fields before submitting.");
-                    return;
-                }
-
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: selectedAmount
-                        }
-                    }]
-                });
-            },
-            onApprove: (data, actions) => {
-                return actions.order.capture().then((details) => {
-                    alert(`Thank you, ${details.payer.name.given_name}. Your payment of $${selectedAmount} was successful!`);
-                    form.reset();
-                });
-            },
-            onError: (err) => {
-                console.error("PayPal Error: ", err);
-                alert("An error occurred with your payment. Please try again.");
-            }
-        }).render('#paypal-button-container');
-    </script>
+        </footer>
+    </main>
 </body>
 </html>
