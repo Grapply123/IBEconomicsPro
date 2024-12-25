@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Feedback - Submit Your Work</title>
+    <title>IA Feedback - Submit Your Draft</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
 </head>
 <body>
     <header>
@@ -12,53 +13,91 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="guide.html">Complete IA Guide</a></li>
+                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="diagrams.html">Diagrams</a></li>
+                <li><a href="evaluation.html">Evaluation</a></li>
                 <li><a href="feedback.html" class="active">IA Feedback</a></li>
                 <li><a href="tutoring.html">Tutoring</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="feedback-form">
+        <section class="section">
             <div class="container">
-                <h1>IA Feedback Submission</h1>
-                <p>Submit your Internal Assessment for feedback, and choose your preferred turnaround time.</p>
-                
-                <form action="https://formspree.io/f/mvggzzrk" method="POST">
-                    <!-- Name -->
+                <h2>Submit Your IA Draft</h2>
+                <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time and complete your payment to confirm your order.</p>
+
+                <!-- Form Section -->
+                <form id="feedback-form" action="https://formspree.io/f/mvggzzrk" method="POST">
                     <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    
-                    <!-- Email -->
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    
-                    <!-- Dropbox Link -->
-                    <label for="dropbox-link">Dropbox File Link:</label>
-                    <input type="url" id="dropbox-link" name="dropbox-link" placeholder="Paste your Dropbox shared link" required>
-                    
-                    <!-- Turnaround Time -->
-                    <label for="turnaround-time">Preferred Turnaround Time:</label>
-                    <select id="turnaround-time" name="turnaround-time" required>
-                        <option value="24 hours">24 Hours</option>
-                        <option value="48 hours">48 Hours</option>
-                        <option value="72 hours">72 Hours</option>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="turnaround">Turnaround Time:</label>
+                    <select id="turnaround" name="turnaround" required>
+                        <option value="24 Hours - $20">24 Hours - $20</option>
+                        <option value="48 Hours - $15">48 Hours - $15</option>
+                        <option value="72 Hours - $10">72 Hours - $10</option>
                     </select>
-                    
-                    <!-- Additional Comments -->
-                    <label for="comments">Additional Comments (Optional):</label>
-                    <textarea id="comments" name="comments" rows="5" placeholder="Add any specific details or questions"></textarea>
-                    
-                    <!-- Submit Button -->
-                    <button type="submit">Submit Feedback</button>
+
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+
+                    <!-- PayPal Buttons -->
+                    <div id="paypal-button-container" style="margin-top: 20px;"></div>
+
+                    <input type="hidden" id="payment-complete" name="payment-complete" value="false">
                 </form>
             </div>
         </section>
     </main>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
-        </div>
+        <p>&copy; 2024 EconIAPro. All rights reserved. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
     </footer>
+
+    <script>
+        // Get PayPal Button
+        const paypalContainer = document.getElementById('paypal-button-container');
+        const form = document.getElementById('feedback-form');
+        const hiddenInput = document.getElementById('payment-complete');
+
+        // PayPal Buttons
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                const selectedOption = document.getElementById('turnaround').value;
+                let price = 10; // Default price for 72 hours
+
+                if (selectedOption.includes('24 Hours')) {
+                    price = 20;
+                } else if (selectedOption.includes('48 Hours')) {
+                    price = 15;
+                }
+
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: price.toString()
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Payment successful! Thank you, ' + details.payer.name.given_name + '.');
+                    hiddenInput.value = "true"; // Mark payment as complete
+                    form.submit(); // Submit the form to Formspree
+                });
+            },
+            onError: function(err) {
+                alert('Something went wrong with the payment. Please try again.');
+            }
+        }).render('#paypal-button-container');
+    </script>
 </body>
 </html>
