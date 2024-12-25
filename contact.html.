@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & FAQ - EconIAPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="guide.html">Complete IA Guide</a></li>
+                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="diagrams.html">Diagrams</a></li>
+                <li><a href="evaluation.html">Evaluation</a></li>
+                <li><a href="ia-feedback.html">IA Feedback</a></li>
+                <li><a href="tutoring.html">Tutoring</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>If you have any questions or concerns, feel free to reach out to me via email:</p>
+                <p><strong>Email:</strong> <a href="mailto:luigieconiapro@gmail.com">luigieconiapro@gmail.com</a></p>
+                <p>I will get back to you as soon as possible. Thank you for your interest in EconIAPro!</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>1. What does the "turnaround time" mean?</h3>
+                    <p>The turnaround time indicates how quickly you'd like to receive your IA feedback. Paying more ensures faster feedback, but the quality will remain the same whether you pay $10 or $20.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>2. Can I reschedule a tutoring session?</h3>
+                    <p>Yes, you can reschedule a tutoring session as long as you notify me at least 24 hours prior. The 24-hour deadline is strict, so please plan accordingly.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>3. Do you offer discounts or group tutoring?</h3>
+                    <p>Currently, I do not offer discounts or group tutoring. Depending on how the site evolves, I may introduce new options in the future.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>4. How do I make payments on this site?</h3>
+                    <p>Payments are processed securely through CashApp. Once you've filled out the form for IA Feedback or Tutoring, you'll find a payment link to complete your transaction.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>5. Can I get a refund if I'm not satisfied?</h3>
+                    <p>If you're not satisfied with my service, you can request a refund directly through CashApp. I value honesty and transparency and will always work to ensure your experience is positive.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EconIAPro. Built for educational purposes. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+    </footer>
+</body>
+</html>
