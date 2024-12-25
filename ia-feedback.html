@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA Feedback - Submit Your Draft</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
 </head>
 <body>
     <!-- Header -->
@@ -34,44 +33,43 @@
             <h2>Submit Your IA Draft</h2>
             <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time and complete your payment to confirm your order.</p>
             <form id="feedback-form">
-                <div>
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                </div>
-                <div>
-                    <label for="turnaround">Turnaround Time:</label>
-                    <select id="turnaround" name="turnaround" required>
-                        <option value="20">24 Hours - $20</option>
-                        <option value="15">48 Hours - $15</option>
-                        <option value="10">72 Hours - $10</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="comments">Additional Comments:</label>
-                    <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea>
-                </div>
-                <div id="paypal-button-container"></div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                <br><br>
+                <label for="turnaround">Turnaround Time:</label>
+                <select id="turnaround" name="turnaround" required>
+                    <option value="20">24 Hours - $20</option>
+                    <option value="15">48 Hours - $15</option>
+                    <option value="10">72 Hours - $10</option>
+                </select>
+                <br><br>
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea>
+                <br><br>
             </form>
+            <div id="paypal-button-container" style="margin-top: 20px;"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 EconIAPro. Built for educational purposes. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+            <p>© 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
         </div>
     </footer>
 
-    <!-- PayPal Integration Script -->
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AX2AxtUWuIvAIAuJS3SHNmA16P9T0gMYBIKm9IRUg3hP-mC5yPHFvXPjSXGgz3c_BbAv0chraLoa2h5_&currency=USD"></script>
+
+    <!-- PayPal Integration -->
     <script>
         const form = document.getElementById('feedback-form');
         const paypalButtonContainer = document.getElementById('paypal-button-container');
-        
+
         let selectedAmount = 20; // Default amount for 24-hour turnaround
 
         // Update the amount based on the selected option
@@ -79,43 +77,34 @@
             selectedAmount = event.target.value;
         });
 
+        // PayPal Buttons Integration
         paypal.Buttons({
             createOrder: (data, actions) => {
-                // Validate the form before proceeding to PayPal
+                // Validate form before creating order
                 if (!form.reportValidity()) {
-                    alert("Please fill in all required fields before submitting.");
+                    alert("Please fill out all required fields before submitting.");
                     return;
                 }
 
-                // Create an order
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: selectedAmount, // Use the selected amount
+                            value: selectedAmount
                         }
                     }]
                 });
             },
             onApprove: (data, actions) => {
                 return actions.order.capture().then((details) => {
-                    alert(`Thank you for your payment, ${details.payer.name.given_name}!`);
-
-                    // Optionally send form data to an email backend or another service
-                    console.log("Form submitted with the following details:");
-                    console.log("Full Name: ", form.fullName.value);
-                    console.log("Email: ", form.email.value);
-                    console.log("Turnaround Time: ", form.turnaround.value);
-                    console.log("Additional Comments: ", form.comments.value);
-
-                    // Clear the form after successful payment
+                    alert(`Thank you, ${details.payer.name.given_name}. Your payment of $${selectedAmount} was successful!`);
                     form.reset();
                 });
             },
             onError: (err) => {
-                console.error("Error during PayPal transaction: ", err);
-                alert("An error occurred during the transaction. Please try again.");
+                console.error("PayPal Error: ", err);
+                alert("An error occurred with your payment. Please try again.");
             }
-        }).render(paypalButtonContainer);
+        }).render('#paypal-button-container');
     </script>
 </body>
 </html>
