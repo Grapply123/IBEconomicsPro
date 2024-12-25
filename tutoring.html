@@ -3,95 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoring - EconIAPro</title>
+    <title>Tutoring Services - EconIAPro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>EconIAPro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="guide.html">Complete IA Guide</a></li>
-                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                    <li><a href="key-concepts.html">Key Concepts</a></li>
-                    <li><a href="diagrams.html">Diagrams</a></li>
-                    <li><a href="evaluation.html">Evaluation</a></li>
-                    <li><a href="ia-feedback.html">IA Feedback</a></li>
-                    <li><a href="tutoring.html" class="active">Tutoring</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="guide.html">Complete IA Guide</a></li>
+                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                <li><a href="key-concepts.html">Key Concepts</a></li>
+                <li><a href="diagrams.html">Diagrams</a></li>
+                <li><a href="evaluation.html">Evaluation</a></li>
+                <li><a href="ia-feedback.html">IA Feedback</a></li>
+                <li><a href="tutoring.html" class="active">Tutoring</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <section class="section">
-        <div class="container">
-            <h2>Personalized Tutoring Services</h2>
-            <p>Need help mastering IB Economics? I offer one-on-one tutoring sessions tailored to your needs, covering Microeconomics, Macroeconomics, and IA support or review.</p>
+    <main>
+        <section class="hero">
+            <h1>Tutoring Services</h1>
+            <p>Boost your understanding of IB Economics through personalized tutoring sessions.</p>
+        </section>
 
-            <h3>Details</h3>
-            <ul>
-                <li><b>Format:</b> Sessions conducted via Zoom.</li>
-                <li><b>Pricing:</b> $15/hour (reflecting Massachusetts minimum wage).</li>
-                <li><b>Availability:</b>
-                    <ul>
-                        <li>Weekdays: 5 PM to 10 PM EST</li>
-                        <li>Weekends: Any hour EST</li>
-                    </ul>
-                </li>
-            </ul>
+        <section>
+            <div class="container">
+                <h2>Book a Tutoring Session</h2>
+                <p>
+                    I offer tutoring sessions focused on IB Economics, including Microeconomics, Macroeconomics, and Internal Assessment support or review. 
+                    Each session is conducted via Zoom and costs <strong>$15 per hour</strong>. I am available:
+                </p>
+                <ul>
+                    <li>Monday to Friday: 5 PM - 10 PM EST</li>
+                    <li>Weekends: Any hour (EST)</li>
+                </ul>
+                <p><strong>Note:</strong> Payment is required to confirm your session. Bookings without payment will not be scheduled.</p>
+                
+                <form action="https://formspree.io/f/mvggzzrk" method="POST">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    
+                    <label for="date-time">Preferred Date and Time:</label>
+                    <input type="datetime-local" id="date-time" name="preferred-date-time" required>
+                    
+                    <label for="topic">Session Topic (optional):</label>
+                    <input type="text" id="topic" name="topic" placeholder="e.g., Macroeconomics, IA Feedback">
+                    
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" placeholder="Include any specific notes or questions here"></textarea>
+                    
+                    <button type="submit" class="btn">Submit Booking</button>
+                </form>
 
-            <h3>How It Works</h3>
-            <ol>
-                <li>Fill out the form below with your preferred date, time, and focus area.</li>
-                <li>Submit the form and follow the payment instructions via Cash App (<b>$EconIAPro</b>).</li>
-                <li>Once payment is confirmed, I will send you the Zoom link for your session.</li>
-            </ol>
+                <p class="note">
+                    After submitting this form, please send payment via Cash App to <strong>$EconIAPro</strong>. 
+                    Sessions will not be confirmed without payment.
+                </p>
+                <p>If you have any issues, contact me at <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a>.</p>
+            </div>
+        </section>
+    </main>
 
-            <h3>Refund Policy</h3>
-            <p>I am committed to providing quality tutoring. If the service does not meet your expectations, you may request a refund through Cash App. Refunds are not provided for no-shows unless notified at least 24 hours in advance.</p>
-
-            <form id="tutoring-form" onsubmit="handleFormSubmission(event)">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Full Name" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email Address" required><br><br>
-
-                <label for="date">Preferred Date and Time:</label>
-                <input type="text" id="date" name="date" placeholder="E.g., Saturday 10 AM EST" required><br><br>
-
-                <label for="topic">Area of Focus:</label>
-                <textarea id="topic" name="topic" placeholder="E.g., Microeconomics: Supply and Demand" required></textarea><br><br>
-
-                <button type="submit" class="btn">Submit and Proceed to Payment</button>
-            </form>
-
-            <h3>Payment Instructions</h3>
-            <p>
-                To confirm your session, please send $15 via Cash App to <b>$EconIAPro</b>. Include your name in the payment note for easy identification.
-            </p>
-            <p>Once payment is received, I will email you the Zoom link for your tutoring session.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>© 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
-            <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
-        </div>
+        <p>&copy; 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
     </footer>
-
-    <script>
-        function handleFormSubmission(event) {
-            event.preventDefault();
-            alert("Thank you for submitting the form. Please complete your payment via Cash App ($EconIAPro) to confirm your session.");
-        }
-    </script>
 </body>
 </html>
