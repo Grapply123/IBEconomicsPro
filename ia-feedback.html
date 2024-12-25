@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Feedback Submission - EconIAPro</title>
+    <title>IA Feedback - EconIAPro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +15,11 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="guide.html">Guide</a></li>
-                    <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
+                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="diagrams.html">Diagrams</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="feedback.html" class="active">IA Feedback</a></li>
                     <li><a href="tutoring.html">Tutoring</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -24,37 +28,39 @@
     </header>
 
     <!-- Main Content -->
-    <section class="section">
-        <div class="container">
-            <h2>Submit Your IA for Feedback</h2>
-            <p>Ready to take your IA to the next level? Submit your draft below and select your desired turnaround time. I’ll review your work and provide detailed feedback to help you excel.</p>
+    <main>
+        <section class="hero">
+            <h1>IA Feedback</h1>
+            <p>Get personalized feedback to improve your IB Economics IA.</p>
+        </section>
 
-            <!-- Submission Form -->
-            <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <section class="feedback-form section">
+            <div class="container">
+                <h2>Submit Your IA for Feedback</h2>
+                <p>Fill out the form below to receive detailed feedback on your Internal Assessment. Choose your preferred turnaround time, and I'll get back to you as soon as possible!</p>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
-
-                <label for="turnaround">Turnaround Time:</label>
-                <select id="turnaround" name="turnaround" required>
-                    <option value="" disabled selected>Select turnaround time</option>
-                    <option value="24-hours">24 Hours - $20</option>
-                    <option value="48-hours">48 Hours - $15</option>
-                    <option value="3-days">3 Days - $10</option>
-                </select>
-
-                <label for="comments">Additional Comments (optional):</label>
-                <textarea id="comments" name="comments" rows="4" placeholder="Any specific concerns or areas to focus on?"></textarea>
-
-                <label for="file">Upload Your IA Draft:</label>
-                <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" required>
-
-                <button type="submit" class="btn">Submit for Feedback</button>
-            </form>
-        </div>
-    </section>
+                <form action="https://formspree.io/f/mvggzzrk" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <label for="turnaround">Turnaround Time:</label>
+                    <select id="turnaround" name="turnaround">
+                        <option value="24 hours">24 hours</option>
+                        <option value="48 hours">48 hours</option>
+                        <option value="72 hours">72 hours</option>
+                    </select>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -63,40 +69,5 @@
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
         </div>
     </footer>
-
-    <!-- Add custom styles for the form -->
-    <style>
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        form label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-        form input, form select, form textarea, form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        form button {
-            background-color: #003366;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        form button:hover {
-            background-color: #f39c12;
-        }
-    </style>
 </body>
 </html>
