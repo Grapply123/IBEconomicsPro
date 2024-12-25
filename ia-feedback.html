@@ -3,76 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Feedback - Submit Your IA</title>
+    <title>IA Feedback - EconIAPro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="guide.html">Complete IA Guide</a></li>
-                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="diagrams.html">Diagrams</a></li>
-                <li><a href="evaluation.html">Evaluation</a></li>
-                <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
-                <li><a href="tutoring.html">Tutoring</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>EconIAPro</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="guide.html">Complete IA Guide</a></li>
+                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="diagrams.html">Diagrams</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
+                    <li><a href="tutoring.html">Tutoring</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <section class="section">
-            <h1>Submit Your IA Draft</h1>
-            <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time, then follow the instructions to complete your payment via Cash App. We apologize for any inconvenience caused by the lack of direct card payment options.</p>
+    <section class="section">
+        <div class="container">
+            <h2>Submit Your IA Draft</h2>
             <p>
-                <strong>Why Cash App?</strong><br>
-                As a 17-year-old entrepreneur, I currently rely on Cash App for payments, as other platforms require bank account integration. I appreciate your understanding and support.
+                Fill out the form below to submit your IA draft for feedback. Select a turnaround time, complete your payment via Cash App, and I will provide detailed feedback tailored to your needs.
             </p>
             <p>
-                <strong>How to Pay with Cash App:</strong>
-                <ol>
-                    <li>Open your Cash App on your phone.</li>
-                    <li>Enter the payment amount based on your selected turnaround time (e.g., $20 for 24 hours).</li>
-                    <li>Send the payment to my $Cashtag: <strong>$EconIAPro</strong>.</li>
-                    <li>Include your full name in the payment note for reference.</li>
-                    <li>Click "Submit" on this form after sending the payment.</li>
-                </ol>
+                <strong>Payment Policy:</strong> Payments are processed through Cash App using the Cashtag <code>$EconIAPro</code>. I understand the importance of trust and quality. If you feel the service was not up to your expectations, you can request a refund directly through Cash App, and I will address it promptly. Refunds are only available before the feedback is delivered.
             </p>
-        </section>
+            <p>
+                <strong>How to Use Cash App:</strong> After completing the form, send the appropriate payment amount (based on the turnaround time you selected) to <code>$EconIAPro</code> on Cash App. Once I receive the payment, I will begin working on your IA feedback immediately.
+            </p>
 
-        <!-- Submission Form -->
-        <section class="section">
-            <form id="feedback-form" method="post" action="https://formspree.io/f/mvggzzrk">
+            <!-- Feedback Form -->
+            <form id="feedbackForm" action="https://formspree.io/f/mvggzzrk" method="POST" enctype="multipart/form-data">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Full Name" required><br>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email Address" required><br>
+                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
 
                 <label for="turnaround">Turnaround Time:</label>
                 <select id="turnaround" name="turnaround" required>
                     <option value="24 Hours - $20">24 Hours - $20</option>
                     <option value="48 Hours - $15">48 Hours - $15</option>
                     <option value="72 Hours - $10">72 Hours - $10</option>
-                </select><br>
+                </select>
 
                 <label for="comments">Additional Comments:</label>
-                <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea><br>
+                <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea>
 
-                <input type="submit" value="Submit Form">
+                <label for="file">Upload Your IA Draft:</label>
+                <input type="file" id="file" name="file" required>
+
+                <p>
+                    <strong>Step 1:</strong> Complete this form and click "Submit".<br>
+                    <strong>Step 2:</strong> Send your payment via Cash App to <code>$EconIAPro</code>.<br>
+                    <strong>Step 3:</strong> I will confirm receipt of your payment and begin reviewing your draft.
+                </p>
+
+                <button type="submit">Submit</button>
             </form>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <p>© 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
-        </footer>
-    </main>
+        </div>
+    </footer>
 </body>
 </html>
