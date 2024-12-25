@@ -8,96 +8,114 @@
     <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="guide.html">Complete IA Guide</a></li>
-                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="diagrams.html">Diagrams</a></li>
-                <li><a href="evaluation.html">Evaluation</a></li>
-                <li><a href="feedback.html" class="active">IA Feedback</a></li>
-                <li><a href="tutoring.html">Tutoring</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>EconIAPro</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="guide.html">Complete IA Guide</a></li>
+                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="diagrams.html">Diagrams</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="ia-feedback.html" class="active">IA Feedback</a></li>
+                    <li><a href="tutoring.html">Tutoring</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <h2>Submit Your IA Draft</h2>
-                <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time and complete your payment to confirm your order.</p>
-
-                <!-- Form Section -->
-                <form id="feedback-form" action="https://formspree.io/f/mvggzzrk" method="POST">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <h2>Submit Your IA Draft</h2>
+            <p>Fill out the form below to submit your IA draft for feedback. Select a turnaround time and complete your payment to confirm your order.</p>
+            <form id="feedback-form">
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+                </div>
+                <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                </div>
+                <div>
                     <label for="turnaround">Turnaround Time:</label>
                     <select id="turnaround" name="turnaround" required>
-                        <option value="24 Hours - $20">24 Hours - $20</option>
-                        <option value="48 Hours - $15">48 Hours - $15</option>
-                        <option value="72 Hours - $10">72 Hours - $10</option>
+                        <option value="20">24 Hours - $20</option>
+                        <option value="15">48 Hours - $15</option>
+                        <option value="10">72 Hours - $10</option>
                     </select>
-
+                </div>
+                <div>
                     <label for="comments">Additional Comments:</label>
-                    <textarea id="comments" name="comments" rows="4"></textarea>
+                    <textarea id="comments" name="comments" placeholder="Include any specific notes here"></textarea>
+                </div>
+                <div id="paypal-button-container"></div>
+            </form>
+        </div>
+    </section>
 
-                    <!-- PayPal Buttons -->
-                    <div id="paypal-button-container" style="margin-top: 20px;"></div>
-
-                    <input type="hidden" id="payment-complete" name="payment-complete" value="false">
-                </form>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 EconIAPro. All rights reserved. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+        <div class="container">
+            <p>© 2024 EconIAPro. Built for educational purposes. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+            <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
+        </div>
     </footer>
 
+    <!-- PayPal Integration Script -->
     <script>
-        // Get PayPal Button
-        const paypalContainer = document.getElementById('paypal-button-container');
         const form = document.getElementById('feedback-form');
-        const hiddenInput = document.getElementById('payment-complete');
+        const paypalButtonContainer = document.getElementById('paypal-button-container');
+        
+        let selectedAmount = 20; // Default amount for 24-hour turnaround
 
-        // PayPal Buttons
+        // Update the amount based on the selected option
+        document.getElementById('turnaround').addEventListener('change', (event) => {
+            selectedAmount = event.target.value;
+        });
+
         paypal.Buttons({
-            createOrder: function(data, actions) {
-                const selectedOption = document.getElementById('turnaround').value;
-                let price = 10; // Default price for 72 hours
-
-                if (selectedOption.includes('24 Hours')) {
-                    price = 20;
-                } else if (selectedOption.includes('48 Hours')) {
-                    price = 15;
+            createOrder: (data, actions) => {
+                // Validate the form before proceeding to PayPal
+                if (!form.reportValidity()) {
+                    alert("Please fill in all required fields before submitting.");
+                    return;
                 }
 
+                // Create an order
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: price.toString()
+                            value: selectedAmount, // Use the selected amount
                         }
                     }]
                 });
             },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Payment successful! Thank you, ' + details.payer.name.given_name + '.');
-                    hiddenInput.value = "true"; // Mark payment as complete
-                    form.submit(); // Submit the form to Formspree
+            onApprove: (data, actions) => {
+                return actions.order.capture().then((details) => {
+                    alert(`Thank you for your payment, ${details.payer.name.given_name}!`);
+
+                    // Optionally send form data to an email backend or another service
+                    console.log("Form submitted with the following details:");
+                    console.log("Full Name: ", form.fullName.value);
+                    console.log("Email: ", form.email.value);
+                    console.log("Turnaround Time: ", form.turnaround.value);
+                    console.log("Additional Comments: ", form.comments.value);
+
+                    // Clear the form after successful payment
+                    form.reset();
                 });
             },
-            onError: function(err) {
-                alert('Something went wrong with the payment. Please try again.');
+            onError: (err) => {
+                console.error("Error during PayPal transaction: ", err);
+                alert("An error occurred during the transaction. Please try again.");
             }
-        }).render('#paypal-button-container');
+        }).render(paypalButtonContainer);
     </script>
 </body>
 </html>
