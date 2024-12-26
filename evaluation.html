@@ -1,81 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluation - Master the Economics IA</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>EconIAPro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="guide.html">Guide</a></li>
-                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                    <li><a href="key-concepts.html">Key Concepts</a></li>
-                    <li><a href="diagrams.html">Diagrams</a></li>
-                    <li><a href="evaluation.html" class="active">Evaluation</a></li>
-                    <li><a href="ia-feedback.html">IA Feedback</a></li>
-                    <li><a href="tutoring.html">Tutoring</a></li>
-                </ul>
-            </nav>
-            <!-- Dark Mode Toggle -->
-            <div class="dark-mode-toggle">
-                <input type="checkbox" id="dark-mode-toggle">
-                <label for="dark-mode-toggle">Dark Mode</label>
-            </div>
-        </div>
-    </header>
+<!-- Banner Section -->
+<section class="hero" style="background-image: url('pexels-kindelmedia-7688460.jpg'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white;">
+    <h1>Mastering Evaluation in Economics IA</h1>
+    <p>Learn how to critically evaluate policies and economic issues using the CLASPP framework.</p>
+</section>
 
-    <!-- Banner Section -->
-    <section class="hero" style="background-image: url('pexels-kindelmedia-7688460.jpg'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white;">
-        <h1>Mastering Evaluation in Economics IA</h1>
-        <p>Learn how to critically evaluate policies and economic issues using the CLASPP framework.</p>
+<!-- Icon Section -->
+<section class="icon-section" style="text-align: center; margin-top: 20px;">
+    <img src="Evaluation icon.png" alt="Evaluation Icon" style="width: 120px;">
+</section>
+
+<!-- Main Content -->
+<main>
+    <section class="section">
+        <div class="container">
+            <h2>What is Evaluation?</h2>
+            <p>
+                Evaluation is where you move beyond analysis and demonstrate critical thinking by assessing the impacts, assumptions, and priorities of a policy. Unlike analysis, which focuses on explaining the theory, evaluation challenges the theory and reflects on its limitations.
+            </p>
+            <p>
+                The goal is to highlight uncertainties, priorities, and trade-offs. It’s not enough to state the expected outcomes of a policy—you must assess whether those outcomes are realistic, fair, and align with societal goals.
+            </p>
+        </div>
     </section>
 
-    <!-- Icon Section -->
-    <section class="icon-section" style="text-align: center; margin-top: 20px;">
-        <img src="Evaluation icon.png" alt="Evaluation Icon" style="width: 120px;">
+    <section class="section">
+        <div class="container">
+            <h2>The CLASPP Framework</h2>
+            <p>CLASPP stands for:</p>
+            <ul>
+                <li><strong>Conclusions:</strong> Summarize the theoretical insights from your analysis. What can we conclude from the theory and diagram?</li>
+                <li><strong>Long-term and Short-term Effects:</strong> Explore whether the policy has different impacts over time. Are there unintended consequences?</li>
+                <li><strong>Assumptions:</strong> Identify the assumptions behind the theory and analyze their limitations. Are they realistic?</li>
+                <li><strong>Stakeholders:</strong> Discuss how the policy affects different groups such as consumers, producers, and the government.</li>
+                <li><strong>Priorities:</strong> Reflect on the societal priorities that the policy addresses. Does it align with societal goals?</li>
+                <li><strong>Pros and Cons:</strong> Highlight additional advantages and disadvantages of the policy.</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Content remains unchanged -->
-        <!-- Sections for What is Evaluation, CLASPP Framework, Examples of Evaluation, and Common Pitfalls to Avoid -->
-    </main>
-
-    <!-- Footer -->
-    <footer>
+    <section class="section">
         <div class="container">
-            <p>© 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
-            <p>Contact: <a href="mailto:luigieconiapro@gmail.com">luigieconiapro@gmail.com</a></p>
+            <h2>Examples of Evaluation</h2>
+            <article>
+                <h3>Long-term vs. Short-term Effects</h3>
+                <p>
+                    Short-term benefits of a policy might resolve immediate issues but create long-term inefficiencies. For instance, subsidies might encourage production in the short run but lead to overproduction in the long term, distorting markets.
+                </p>
+            </article>
+            <article>
+                <h3>Assumptions</h3>
+                <p>
+                    Economic theories often assume "ceteris paribus" (all else remains constant). However, this is rarely the case in real-world scenarios. For example, a tax might assume rational consumer behavior, but in reality, consumers might not respond as expected.
+                </p>
+            </article>
+            <article>
+                <h3>Stakeholders</h3>
+                <p>
+                    A price ceiling might benefit consumers by lowering prices, but it could harm producers who can no longer sell at profitable rates. Identifying winners and losers is a key part of stakeholder evaluation.
+                </p>
+            </article>
         </div>
-    </footer>
+    </section>
 
-    <!-- Dark Mode Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggle = document.getElementById("dark-mode-toggle");
-
-            if (localStorage.getItem("darkMode") === "enabled") {
-                document.body.classList.add("dark-mode");
-                toggle.checked = true;
-            }
-
-            toggle.addEventListener("change", () => {
-                if (toggle.checked) {
-                    document.body.classList.add("dark-mode");
-                    localStorage.setItem("darkMode", "enabled");
-                } else {
-                    document.body.classList.remove("dark-mode");
-                    localStorage.setItem("darkMode", "disabled");
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+    <section class="section">
+        <div class="container">
+            <h2>Common Pitfalls to Avoid</h2>
+            <ul>
+                <li><strong>Repetition:</strong> Avoid simply repeating the same points about the key concept. Add depth and new insights in each paragraph.</li>
+                <li><strong>Overcomplication:</strong> Keep your analysis concise and focused. Use clear cause-and-effect relationships to explain economic outcomes.</li>
+            </ul>
+        </div>
+    </section>
+</main>
