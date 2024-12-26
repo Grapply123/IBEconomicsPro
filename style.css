@@ -17,7 +17,7 @@ body.dark-mode {
 
 /* Header */
 header {
-    background-color: #00509e;
+    background-color: #2c3e50; /* Updated to a sleek dark navy blue */
     color: white;
     padding: 15px 0;
     position: sticky;
@@ -28,7 +28,7 @@ header {
 }
 
 header.dark-mode {
-    background-color: #1e1e1e;
+    background-color: #1a242f; /* Slightly darker for dark mode */
 }
 
 header nav ul {
@@ -51,7 +51,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
     background-color: #ffcc00;
-    color: #00509e;
+    color: #2c3e50;
 }
 
 /* Dark Mode - Header Links */
@@ -102,7 +102,7 @@ body.dark-mode .dark-mode-toggle label {
 
 .hero .cta-button {
     background-color: #ffcc00;
-    color: #00509e;
+    color: #2c3e50;
     padding: 15px 30px;
     text-decoration: none;
     font-size: 1.2rem;
@@ -144,7 +144,7 @@ body.dark-mode .hero .cta-button:hover {
 .section h2 {
     font-size: 2.5rem;
     text-align: center;
-    color: #00509e;
+    color: #2c3e50;
     margin-bottom: 20px;
     border-bottom: 3px solid #ffcc00;
     display: inline-block;
@@ -183,7 +183,7 @@ body.dark-mode .section h2 {
 
 .card h3 {
     font-size: 1.5rem;
-    color: #00509e;
+    color: #2c3e50;
     margin-bottom: 10px;
     transition: color 0.3s;
 }
@@ -196,7 +196,7 @@ body.dark-mode .section h2 {
 }
 
 .card a {
-    background-color: #00509e;
+    background-color: #2c3e50;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -207,7 +207,7 @@ body.dark-mode .section h2 {
 
 .card a:hover {
     background-color: #ffcc00;
-    color: #00509e;
+    color: #2c3e50;
     transform: scale(1.05);
 }
 
@@ -237,7 +237,7 @@ body.dark-mode .card a:hover {
 
 /* Footer */
 footer {
-    background-color: #00509e;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 20px 0;
