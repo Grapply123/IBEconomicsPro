@@ -1,118 +1,213 @@
-/* Root variables for default theme */
+/* Root Variables for Theme Colors */
 :root {
-    --primary-color: #2a9d8f; /* Teal */
-    --secondary-color: #e9c46a; /* Soft Yellow */
-    --background-color: #f4f1de; /* Light Beige */
-    --text-color: #264653; /* Dark Blue-Green */
-    --heading-font: 'Rasa', serif;
-    --body-font: 'Rasa', serif;
+    --primary-color: #3e497a;
+    --secondary-color: #f4f4f9;
+    --accent-color: #ff7f50;
+    --text-color: #333;
+    --text-light-color: #666;
+    --background-color: #f9fafb;
+    --card-bg-color: #fff;
+    --card-border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode overrides */
-body.dark-mode {
-    --primary-color: #9ec5cf; /* Soft Blue */
-    --secondary-color: #ffdd8c; /* Golden Yellow */
-    --background-color: #1e212b; /* Deep Gray */
-    --text-color: #e4e6eb; /* Light Gray */
-}
-
-/* General styles */
-body {
-    font-family: var(--body-font);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
+/* Reset CSS */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 0.5em;
+body {
+    font-family: 'Rasa', serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 a {
-    color: var(--primary-color);
     text-decoration: none;
+    color: var(--primary-color);
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
-button {
+/* Header */
+header {
     background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: var(--body-font);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: #fff;
+    padding: 20px;
 }
 
-button:hover {
-    background-color: var(--secondary-color);
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Floating effect for the homepage hero section */
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 1em;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
 .hero {
-    position: relative;
-    background-image: url('pexels-kindelmedia-7688460.jpg'); /* Example banner */
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
     text-align: center;
-    color: var(--text-color);
-    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
-.hero .floating-element {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+.hero .cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #ff5733;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
     background-color: var(--secondary-color);
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: float 6s ease-in-out infinite;
 }
 
-/* Floating animation */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-/* Position the floating elements */
-.floating-element:nth-child(1) {
-    top: 30%;
-    left: 10%;
-    animation-delay: 0s;
+.about p {
+    font-size: 1.1em;
+    color: var(--text-light-color);
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
-.floating-element:nth-child(2) {
-    top: 50%;
-    right: 15%;
-    animation-delay: 2s;
+/* Overview Section */
+.overview {
+    padding: 50px 20px;
+    background-color: var(--background-color);
+    text-align: center;
 }
 
-.floating-element:nth-child(3) {
-    top: 70%;
-    left: 20%;
-    animation-delay: 4s;
+.overview h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Card Design */
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    color: var(--text-light-color);
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+footer a:hover {
+    color: #ff5733;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode footer,
+body.dark-mode header {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
