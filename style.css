@@ -45,13 +45,23 @@ header nav ul li a {
     color: white;
     font-weight: bold;
     padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
     border-radius: 5px;
 }
 
+/* Highlight Active Page */
+header nav ul li a.active {
+    background-color: #ffcc00; /* Highlight the active link */
+    color: #2c3e50; /* Contrast text color */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Hover Effect */
 header nav ul li a:hover {
-    background-color: #ffcc00;
+    background-color: #e6b800; /* Slightly darker highlight */
     color: #2c3e50;
+    transform: scale(1.05); /* Subtle hover animation */
 }
 
 /* Dark Mode - Header Links */
@@ -59,8 +69,13 @@ body.dark-mode header nav ul li a {
     color: #e0e0e0;
 }
 
-body.dark-mode header nav ul li a:hover {
+body.dark-mode header nav ul li a.active {
     background-color: #555555;
+    color: #ffcc00; /* Highlight active link in dark mode */
+}
+
+body.dark-mode header nav ul li a:hover {
+    background-color: #777777;
     color: #ffcc00;
 }
 
@@ -213,26 +228,26 @@ body.dark-mode .section h2 {
 
 /* Dark Mode - Cards Section */
 body.dark-mode .card {
-    background-color: #333333; /* Dark background for cards */
-    color: #ffffff; /* Light text for better contrast */
+    background-color: #333333;
+    color: #ffffff;
 }
 
 body.dark-mode .card h3 {
-    color: #ffcc00; /* Highlight headings in yellow for visibility */
+    color: #ffcc00;
 }
 
 body.dark-mode .card p {
-    color: #e0e0e0; /* Light gray for better readability */
+    color: #e0e0e0;
 }
 
 body.dark-mode .card a {
-    background-color: #555555; /* Subtle contrast button background */
-    color: #ffffff; /* White text for buttons */
+    background-color: #555555;
+    color: #ffffff;
 }
 
 body.dark-mode .card a:hover {
     background-color: #777777;
-    color: #ffcc00; /* Consistent hover effect */
+    color: #ffcc00;
 }
 
 /* Footer */
@@ -263,10 +278,6 @@ body.dark-mode footer {
 
 body.dark-mode footer a {
     color: #ffcc00;
-}
-
-body.dark-mode footer a:hover {
-    color: #e6b800;
 }
 
 /* Responsive Design */
