@@ -30,8 +30,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background-image: url('5184.avif'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white;">
+    <section class="hero" style="background-image: url('newspaper spread use ths.jpeg'); background-size: cover; background-position: center; padding: 100px 20px; text-align: center; color: white;">
         <h1>Choosing the Right Article</h1>
+    </section>
+
+    <!-- Icon Section -->
+    <section class="icon-section" style="text-align: center; margin-top: 20px;">
+        <img src="diagrams icon.jpg" alt="Article Icon" style="width: 80px;">
     </section>
 
     <!-- Main Content -->
@@ -44,7 +49,7 @@
                 <h3>Why Does It Matter?</h3>
                 <p>Think of your article as the starting block in a race. No matter how skilled you are, choosing the wrong article is like running with the wrong equipment. To set yourself up for success, you must begin with a strong foundation. Selecting an article that perfectly aligns with economic concepts and theories will make analysis much smoother and more impactful.</p>
 
-                <h3><img src="360_F_275429261_NE8y8ytdBNuEofl6zuv5MFrhOzBtQawd.jpg" alt="Guidelines Icon" style="width: 40px; vertical-align: middle;"> Key Guidelines for Selecting Your Article</h3>
+                <h3>Key Guidelines for Selecting Your Article</h3>
                 <ul>
                     <li><strong>Decide on a Concept First:</strong> Before searching for an article, identify the economic concept you want to explore (e.g., supply and demand, market failure, taxes). A clear focus will help you find an article that aligns with your goals.</li>
                     <li><strong>Stick to Reputable Sources:</strong> Use trusted publications like 
@@ -89,5 +94,27 @@
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
         </div>
     </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("dark-mode-toggle");
+
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
+                toggle.checked = true;
+            }
+
+            toggle.addEventListener("change", () => {
+                if (toggle.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
