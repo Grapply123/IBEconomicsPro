@@ -1,148 +1,3 @@
-/* General Styles */
-body {
-    font-family: 'Open Sans', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f7fc;
-    line-height: 1.8;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-mode header {
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
-body.dark-mode .hero {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .card {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-body.dark-mode .card a {
-    background-color: #555555;
-    color: #ffffff;
-}
-
-body.dark-mode .card a:hover {
-    background-color: #777777;
-    color: #ffffff;
-}
-
-body.dark-mode footer {
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
-body.dark-mode footer a {
-    color: #ffcc00;
-}
-
-body.dark-mode footer a:hover {
-    color: #e6b800;
-}
-
-/* Header */
-header {
-    background-color: #00509e;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 5px;
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-    background-color: #ffcc00;
-    color: #00509e;
-}
-
-/* Hero Section */
-.hero {
-    background-image: url('hero-image.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: white;
-    padding: 100px 20px;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin: 0;
-    color: #ffcc00;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin: 20px 0 40px;
-}
-
-.hero .cta-button {
-    background-color: #ffcc00;
-    color: #00509e;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.hero .cta-button:hover {
-    background-color: #e6b800;
-    transform: scale(1.05);
-}
-
-/* Section Titles */
-.section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #00509e;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #ffcc00;
-    display: inline-block;
-}
-
 /* Cards Section */
 .cards {
     display: flex;
@@ -160,7 +15,7 @@ header nav ul li a.active {
     text-align: center;
     flex: 1;
     max-width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .card:hover {
@@ -172,12 +27,14 @@ header nav ul li a.active {
     font-size: 1.5rem;
     color: #00509e;
     margin-bottom: 10px;
+    transition: color 0.3s;
 }
 
 .card p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 15px;
+    transition: color 0.3s;
 }
 
 .card a {
@@ -187,7 +44,7 @@ header nav ul li a.active {
     text-decoration: none;
     font-size: 1rem;
     border-radius: 50px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
 .card a:hover {
@@ -196,47 +53,26 @@ header nav ul li a.active {
     transform: scale(1.05);
 }
 
-/* Footer */
-footer {
-    background-color: #00509e;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+/* Dark Mode - Cards Section */
+body.dark-mode .card {
+    background-color: #333333; /* Dark background for cards */
+    color: #ffffff; /* Light text for better contrast */
 }
 
-footer a {
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s;
+body.dark-mode .card h3 {
+    color: #ffcc00; /* Highlight headings in yellow for visibility */
 }
 
-footer a:hover {
-    color: #e6b800;
+body.dark-mode .card p {
+    color: #e0e0e0; /* Light gray for better readability */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+body.dark-mode .card a {
+    background-color: #555555; /* Subtle contrast button background */
+    color: #ffffff; /* White text for buttons */
+}
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        max-width: 90%;
-    }
+body.dark-mode .card a:hover {
+    background-color: #777777;
+    color: #ffcc00; /* Consistent hover effect */
 }
