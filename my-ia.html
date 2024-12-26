@@ -7,21 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="guide.html">Complete IA Guide</a></li>
-                <li><a href="choosing-article.html">Choosing the Right Article</a></li>
-                <li><a href="key-concepts.html">Key Concepts</a></li>
-                <li><a href="diagrams.html">Diagrams</a></li>
-                <li><a href="evaluation.html">Evaluation</a></li>
-                <li><a href="ia-feedback.html">IA Feedback</a></li>
-                <li><a href="tutoring.html">Tutoring</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>EconIAPro</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="guide.html">Complete IA Guide</a></li>
+                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="diagrams.html">Diagrams</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="ia-feedback.html">IA Feedback</a></li>
+                    <li><a href="tutoring.html">Tutoring</a></li>
+                </ul>
+            </nav>
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle">Dark Mode</label>
+            </div>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
         <section class="intro">
             <h1>My Macroeconomics IA</h1>
@@ -53,8 +63,35 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 EconIAPro. Built for educational purposes. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+        <div class="container">
+            <p>&copy; 2024 EconIAPro. Built for educational purposes. <br> Not affiliated with the International Baccalaureate Organization (IBO).</p>
+        </div>
     </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("dark-mode-toggle");
+
+            // Check localStorage for dark mode preference
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
+                toggle.checked = true;
+            }
+
+            // Toggle dark mode and save preference
+            toggle.addEventListener("change", () => {
+                if (toggle.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
