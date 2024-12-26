@@ -1,94 +1,14 @@
-/* Root variables for default theme */
-:root {
-    --primary-color: #2a9d8f; /* Teal */
-    --secondary-color: #e9c46a; /* Soft Yellow */
-    --background-color: #f4f1de; /* Light Beige */
-    --text-color: #264653; /* Dark Blue-Green */
-    --heading-font: 'Rasa', serif;
-    --body-font: 'Rasa', serif;
-}
-
-/* Dark mode overrides */
-body.dark-mode {
-    --primary-color: #9ec5cf; /* Soft Blue */
-    --secondary-color: #ffdd8c; /* Golden Yellow */
-    --background-color: #1e212b; /* Deep Gray */
-    --text-color: #e4e6eb; /* Light Gray */
-}
-
-/* General styles */
-body {
-    font-family: var(--body-font);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-    margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-bottom: 0.5em;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: var(--body-font);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Floating effect for the homepage hero section */
-.hero {
-    position: relative;
-    background-image: url('pexels-kindelmedia-7688460.jpg'); /* Example banner */
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    text-align: center;
-    color: var(--text-color);
-    overflow: hidden;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.hero .floating-element {
+/* Floating Elements */
+.floating-element {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: var(--secondary-color);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
-    opacity: 0.8;
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s infinite ease-in-out;
+    z-index: 1;
 }
 
-/* Floating animation */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -98,21 +18,40 @@ button:hover {
     }
 }
 
-/* Position the floating elements */
-.floating-element:nth-child(1) {
-    top: 30%;
-    left: 10%;
-    animation-delay: 0s;
+/* Font Colors */
+.hero-overlay h1, .hero-overlay p {
+    color: #f5f5f5; /* Softer white for banners */
 }
 
-.floating-element:nth-child(2) {
-    top: 50%;
-    right: 15%;
-    animation-delay: 2s;
+.about h2, .overview h2 {
+    color: #2a2a2a; /* Adjust to dark gray for better readability */
 }
 
-.floating-element:nth-child(3) {
-    top: 70%;
-    left: 20%;
-    animation-delay: 4s;
+.about p, .overview p, .cards .card p {
+    color: #4a4a4a; /* Medium gray for readability */
+}
+
+/* Horizontal Navigation */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Keep white for contrast on dark backgrounds */
+    font-family: "Rasa", serif; /* Apply Rasa font */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f5b041; /* Accent color for hover effect */
 }
