@@ -26,8 +26,8 @@
             </nav>
             <!-- Dark Mode Toggle -->
             <div class="dark-mode-toggle">
-                <input type="checkbox" id="dark-mode-toggle">
-                <label for="dark-mode-toggle">Dark Mode</label>
+                <input type="checkbox" id="darkModeToggle">
+                <label for="darkModeToggle">Dark Mode</label>
             </div>
         </div>
     </header>
@@ -78,6 +78,30 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            // Check for saved dark mode preference
+            const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+
+            // Toggle dark mode on checkbox change
+            toggle.addEventListener('change', () => {
+                if (toggle.checked) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
