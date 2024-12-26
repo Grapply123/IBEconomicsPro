@@ -1,57 +1,112 @@
-/* Floating Elements */
-.floating-element {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    animation: float 6s infinite ease-in-out;
-    z-index: 1;
-}
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconIAPro - Master the IB Economics IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>EconIAPro</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="guide.html">Complete IA Guide</a></li>
+                    <li><a href="choosing-article.html">Choosing the Right Article</a></li>
+                    <li><a href="key-concepts.html">Key Concepts</a></li>
+                    <li><a href="diagrams.html">Diagrams</a></li>
+                    <li><a href="evaluation.html">Evaluation</a></li>
+                    <li><a href="ia-feedback.html">IA Feedback</a></li>
+                    <li><a href="tutoring.html">Tutoring</a></li>
+                    <li><a href="my-ia.html">My IA</a></li>
+                </ul>
+            </nav>
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle">Dark Mode</label>
+            </div>
+        </div>
+    </header>
 
-/* Font Colors */
-.hero-overlay h1, .hero-overlay p {
-    color: #f5f5f5; /* Softer white for banners */
-}
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('pexels-pavel-danilyuk-7654579.jpg'); background-size: cover; background-position: center; position: relative;">
+        <div class="hero-overlay">
+            <h1>Welcome to EconIAPro</h1>
+            <p>Your ultimate guide to mastering the IB Economics IA.</p>
+            <a href="guide.html" class="cta-button">Explore the IA Guide</a>
+        </div>
+        <!-- Floating Elements -->
+        <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="top: 50%; left: 30%; animation-delay: 1s;"></div>
+        <div class="floating-element" style="top: 70%; left: 80%; animation-delay: 2s;"></div>
+    </section>
 
-.about h2, .overview h2 {
-    color: #2a2a2a; /* Adjust to dark gray for better readability */
-}
+    <!-- About Section -->
+    <section class="about">
+        <h2>Who I Am</h2>
+        <p>Welcome to EconIAPro, a platform I created to help IB Economics students master their Internal Assessments and reach their highest potential. My name is Luigi Sciascia, and I’m an HL Economics student with two years of dedicated study in the subject. My journey in economics began not just with a curiosity about theory, but also with a desire to share knowledge and help my peers succeed.</p>
+        <p>I started tutoring fellow classmates early in my IB journey, focusing on breaking down complex economic concepts into simple ideas and providing specific feedback on their IAs. It was one of the most satisfying moments of my academic career to see their grades progress from 4s to 6s and even 7s. It made me realize just how much I enjoy teaching and the impact personalized guidance can have on others' success.</p>
+    </section>
 
-.about p, .overview p, .cards .card p {
-    color: #4a4a4a; /* Medium gray for readability */
-}
+    <!-- What I Offer Section -->
+    <section class="overview">
+        <h2>What I Offer</h2>
+        <div class="cards">
+            <div class="card">
+                <h3><a href="guide.html">Complete IA Analysis</a></h3>
+                <p>Step-by-step guidance on crafting the perfect IA.</p>
+            </div>
+            <div class="card">
+                <h3><a href="ia-feedback.html">IA Feedback</a></h3>
+                <p>Get personalized feedback to improve your IA.</p>
+            </div>
+            <div class="card">
+                <h3><a href="tutoring.html">Tutoring</a></h3>
+                <p>Personalized tutoring sessions to boost your understanding of IB Economics, covering Micro, Macro, and IA support.</p>
+            </div>
+            <div class="card">
+                <h3><a href="my-ia.html">My IA</a></h3>
+                <p>See my own IA that received a perfect score, along with my reflections and notes.</p>
+            </div>
+        </div>
+    </section>
 
-/* Horizontal Navigation */
-header nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EconIAPro. Built for educational purposes. <br>Not affiliated with the International Baccalaureate Organization (IBO).</p>
+            <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
+        </div>
+    </footer>
 
-header nav ul li {
-    margin: 0 15px;
-}
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle with LocalStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("dark-mode-toggle");
 
-header nav ul li a {
-    text-decoration: none;
-    color: #ffffff; /* Keep white for contrast on dark backgrounds */
-    font-family: "Rasa", serif; /* Apply Rasa font */
-    font-size: 18px;
-    transition: color 0.3s;
-}
+            // Check localStorage for dark mode preference
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
+                toggle.checked = true;
+            }
 
-header nav ul li a:hover {
-    color: #f5b041; /* Accent color for hover effect */
-}
+            // Toggle dark mode and save preference
+            toggle.addEventListener("change", () => {
+                if (toggle.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
