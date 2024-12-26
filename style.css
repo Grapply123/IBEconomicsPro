@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +39,6 @@
             <p>Your ultimate guide to mastering the IB Economics IA.</p>
             <a href="guide.html" class="cta-button">Explore the IA Guide</a>
         </div>
-        <!-- Floating Elements -->
-        <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-        <div class="floating-element" style="top: 50%; left: 30%; animation-delay: 1s;"></div>
-        <div class="floating-element" style="top: 70%; left: 80%; animation-delay: 2s;"></div>
     </section>
 
     <!-- About Section -->
@@ -56,20 +51,20 @@
     <!-- What I Offer Section -->
     <section class="overview">
         <h2>What I Offer</h2>
-        <div class="cards">
-            <div class="card">
+        <div class="cards-container">
+            <div class="floating-card">
                 <h3><a href="guide.html">Complete IA Analysis</a></h3>
                 <p>Step-by-step guidance on crafting the perfect IA.</p>
             </div>
-            <div class="card">
+            <div class="floating-card">
                 <h3><a href="ia-feedback.html">IA Feedback</a></h3>
                 <p>Get personalized feedback to improve your IA.</p>
             </div>
-            <div class="card">
+            <div class="floating-card">
                 <h3><a href="tutoring.html">Tutoring</a></h3>
                 <p>Personalized tutoring sessions to boost your understanding of IB Economics, covering Micro, Macro, and IA support.</p>
             </div>
-            <div class="card">
+            <div class="floating-card">
                 <h3><a href="my-ia.html">My IA</a></h3>
                 <p>See my own IA that received a perfect score, along with my reflections and notes.</p>
             </div>
