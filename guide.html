@@ -23,6 +23,11 @@
                     <li><a href="tutoring.html">Tutoring</a></li>
                 </ul>
             </nav>
+            <!-- Dark Mode Toggle -->
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle">Dark Mode</label>
+            </div>
         </div>
     </header>
 
@@ -70,5 +75,30 @@
             <p>Contact: <a href="mailto:luigisciascia35@gmail.com">luigisciascia35@gmail.com</a></p>
         </div>
     </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Dark Mode Toggle with LocalStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("dark-mode-toggle");
+
+            // Check localStorage for dark mode preference
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
+                toggle.checked = true;
+            }
+
+            // Toggle dark mode and save preference
+            toggle.addEventListener("change", () => {
+                if (toggle.checked) {
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
