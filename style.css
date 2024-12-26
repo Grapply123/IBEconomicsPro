@@ -1,3 +1,161 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f7fc;
+    line-height: 1.8;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Header */
+header {
+    background-color: #00509e;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+header.dark-mode {
+    background-color: #1e1e1e;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background-color: #ffcc00;
+    color: #00509e;
+}
+
+/* Dark Mode - Header Links */
+body.dark-mode header nav ul li a {
+    color: #e0e0e0;
+}
+
+body.dark-mode header nav ul li a:hover {
+    background-color: #555555;
+    color: #ffcc00;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1rem;
+    color: white;
+}
+
+body.dark-mode .dark-mode-toggle label {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #ffcc00;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0 40px;
+}
+
+.hero .cta-button {
+    background-color: #ffcc00;
+    color: #00509e;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero .cta-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Dark Mode - Hero Section */
+body.dark-mode .hero {
+    background-color: #1e1e1e;
+    box-shadow: none;
+}
+
+body.dark-mode .hero h1 {
+    color: #ffcc00;
+}
+
+body.dark-mode .hero p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .hero .cta-button {
+    background-color: #333333;
+    color: #ffcc00;
+}
+
+body.dark-mode .hero .cta-button:hover {
+    background-color: #555555;
+    color: #e0e0e0;
+}
+
+/* Section Titles */
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #00509e;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ffcc00;
+    display: inline-block;
+}
+
+/* Dark Mode - Section Titles */
+body.dark-mode .section h2 {
+    color: #ffcc00;
+    border-bottom-color: #e6b800;
+}
+
 /* Cards Section */
 .cards {
     display: flex;
@@ -75,4 +233,63 @@ body.dark-mode .card a {
 body.dark-mode .card a:hover {
     background-color: #777777;
     color: #ffcc00; /* Consistent hover effect */
+}
+
+/* Footer */
+footer {
+    background-color: #00509e;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e6b800;
+}
+
+/* Dark Mode - Footer */
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode footer a {
+    color: #ffcc00;
+}
+
+body.dark-mode footer a:hover {
+    color: #e6b800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+    }
 }
