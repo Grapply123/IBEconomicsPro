@@ -26,8 +26,8 @@
             </nav>
             <!-- Dark Mode Toggle -->
             <div class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <label for="darkModeToggle">Dark Mode</label>
+                <input type="checkbox" id="dark-mode-toggle">
+                <label for="dark-mode-toggle">Dark Mode</label>
             </div>
         </div>
     </header>
@@ -79,26 +79,24 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+        // Dark Mode Toggle with LocalStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("dark-mode-toggle");
 
-            // Check for saved dark mode preference
-            const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-
-            if (isDarkMode) {
-                body.classList.add('dark-mode');
+            // Check localStorage for dark mode preference
+            if (localStorage.getItem("darkMode") === "enabled") {
+                document.body.classList.add("dark-mode");
                 toggle.checked = true;
             }
 
-            // Toggle dark mode on checkbox change
-            toggle.addEventListener('change', () => {
+            // Toggle dark mode and save preference
+            toggle.addEventListener("change", () => {
                 if (toggle.checked) {
-                    body.classList.add('dark-mode');
-                    localStorage.setItem('darkMode', 'enabled');
+                    document.body.classList.add("dark-mode");
+                    localStorage.setItem("darkMode", "enabled");
                 } else {
-                    body.classList.remove('dark-mode');
-                    localStorage.setItem('darkMode', 'disabled');
+                    document.body.classList.remove("dark-mode");
+                    localStorage.setItem("darkMode", "disabled");
                 }
             });
         });
