@@ -197,41 +197,41 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #2a2a2a; /* Dark Gray Background */
-    color: #e0e0e0; /* Light Gray Text */
+    background-color: #d3d3d3; /* Light Gray Background */
+    color: #333; /* Darker Text for Contrast */
 }
 
 body.dark-mode .floating-card {
-    background-color: #3a3a3a; /* Slightly lighter gray for cards */
-    border-color: #555; /* Border color adjusted for contrast */
+    background-color: #e6e6e6; /* Slightly lighter gray for cards */
+    border-color: #ccc; /* Border color adjusted for contrast */
 }
 
 body.dark-mode .floating-card h3 {
-    color: #ffffff; /* Bright text for headers */
+    color: #000; /* Dark text for headers */
 }
 
 body.dark-mode .floating-card p {
-    color: #c0c0c0; /* Softer text for descriptions */
+    color: #444; /* Softer text for descriptions */
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #3a3a3a; /* Consistent gray for footer and header */
-    color: #e0e0e0;
+    background-color: #e6e6e6; /* Consistent light gray for footer and header */
+    color: #333;
 }
 
 body.dark-mode .hero {
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #e6e6e6;
+    color: #333;
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(255, 255, 255, 0.1); /* Light overlay for better readability */
+    background: rgba(0, 0, 0, 0.1); /* Light overlay for better readability */
 }
 
 body.dark-mode .hero h1,
 body.dark-mode .hero p {
-    color: #ffffff;
+    color: #333;
 }
 
 body.dark-mode .hero .cta-button {
@@ -240,27 +240,27 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #2a2a2a; /* Dark gray for sections */
-    color: #e0e0e0;
+    background-color: #d3d3d3; /* Light gray for sections */
+    color: #333;
 }
 
 body.dark-mode .about h2,
 body.dark-mode .overview h2 {
-    color: var(--accent-color); /* Accent color for headers */
+    color: var(--primary-color); /* Primary color for headers */
 }
 
 body.dark-mode .about p,
 body.dark-mode .overview p {
-    color: #c0c0c0;
+    color: #444;
 }
 
 /* General Adjustments for Dark Mode */
 body.dark-mode a {
-    color: var(--accent-color); /* Highlight links with the accent color */
+    color: var(--primary-color); /* Highlight links with the primary color */
 }
 
 body.dark-mode a:hover {
-    color: #ff5733; /* Slightly brighter hover effect */
+    color: #3e497a; /* Slightly darker hover effect */
 }
 
 body.dark-mode .cta-button:hover {
@@ -272,5 +272,5 @@ body.dark-mode .cards-container {
 }
 
 body.dark-mode h2 {
-    color: #ffffff; /* Ensure all section headers stand out */
+    color: #000; /* Ensure all section headers stand out */
 }
