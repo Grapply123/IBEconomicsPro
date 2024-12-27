@@ -22,7 +22,7 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.6; /* Adds better spacing for text readability */
 }
 
 a {
@@ -121,7 +121,7 @@ header nav ul li a:hover {
     color: var(--text-light-color);
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Adds space between paragraphs */
 }
 
 /* Overview Section */
@@ -146,33 +146,46 @@ header nav ul li a:hover {
     margin-top: 20px;
 }
 
-/* Card Design */
-.card {
+/* Floating Cards Design */
+.floating-card {
+    width: 300px;
+    padding: 20px;
     background-color: var(--card-bg-color);
     border: 1px solid var(--card-border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px var(--shadow-color);
-    padding: 20px;
-    width: 280px;
+    border-radius: 10px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 3s ease-in-out infinite;
 }
 
-.card h3 {
+.floating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+.floating-card h3 {
     font-size: 1.5em;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.card p {
+.floating-card p {
     font-size: 1em;
     color: var(--text-light-color);
 }
 
-/* Card Hover Effect */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px var(--shadow-color);
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Footer */
@@ -201,7 +214,7 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-body.dark-mode .card {
+body.dark-mode .floating-card {
     background-color: #1e1e1e;
     border-color: #333;
 }
