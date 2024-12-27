@@ -9,7 +9,7 @@
     --card-bg-color: #fff;
     --card-border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --overlay-text-color: #222; /* Adjusted for better readability */
+    --overlay-text-color: #f4f4f9; /* Adjusted for better visibility */
 }
 
 /* Reset CSS */
@@ -23,7 +23,7 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.8; /* Increased line spacing */
+    line-height: 1.8; /* Improved text spacing */
 }
 
 a {
@@ -69,7 +69,7 @@ header nav ul li a:hover {
     background-position: center;
     padding: 100px 20px;
     text-align: center;
-    color: var(--overlay-text-color); /* Improved text visibility */
+    color: var(--overlay-text-color); /* Improved text color on images */
     position: relative;
 }
 
@@ -80,16 +80,19 @@ header nav ul li a:hover {
     display: inline-block;
 }
 
+.hero h1,
+.hero p {
+    color: #f4f4f9; /* Ensure proper contrast for readability */
+}
+
 .hero h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #fff; /* Ensure text stands out */
 }
 
 .hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #fff; /* Ensure text stands out */
 }
 
 .hero .cta-button {
@@ -227,5 +230,11 @@ body.dark-mode header {
 body.dark-mode .hero,
 body.dark-mode .hero h1,
 body.dark-mode .hero p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .about,
+body.dark-mode .about h2,
+body.dark-mode .about p {
     color: #e0e0e0;
 }
