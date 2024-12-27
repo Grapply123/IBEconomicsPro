@@ -134,7 +134,7 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-.overview h2 {
+overview h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: var(--primary-color);
@@ -168,7 +168,7 @@ header nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-.floating-card p {
+floating-card p {
     font-size: 1em;
     color: var(--text-light-color);
 }
@@ -201,13 +201,13 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #121212;
+    background-color: #2a2a2a; /* Slightly darker gray for background */
     color: #e0e0e0;
 }
 
 body.dark-mode .floating-card {
-    background-color: #1e1e1e;
-    border-color: #333;
+    background-color: #383838; /* Slightly darker gray for cards */
+    border-color: #4a4a4a;
 }
 
 body.dark-mode .floating-card h3 {
@@ -215,22 +215,22 @@ body.dark-mode .floating-card h3 {
 }
 
 body.dark-mode .floating-card p {
-    color: #a0a0a0;
+    color: #bcbcbc;
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #1e1e1e;
+    background-color: #383838; /* Matching lighter gray for consistency */
     color: #e0e0e0;
 }
 
 body.dark-mode .hero {
-    background-color: #1e1e1e;
+    background-color: #2a2a2a;
     color: #e0e0e0;
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Maintain lighter overlay for readability */
 }
 
 body.dark-mode .hero h1,
@@ -244,7 +244,7 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #1e1e1e;
+    background-color: #2a2a2a; /* Slightly darker gray for sections */
     color: #e0e0e0;
 }
 
@@ -255,4 +255,5 @@ body.dark-mode .overview h2 {
 
 body.dark-mode .about p,
 body.dark-mode .overview p {
-    color: #a0a0a0;
+    color: #bcbcbc;
+}
