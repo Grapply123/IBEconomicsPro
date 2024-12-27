@@ -197,31 +197,31 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #d3d3d3; /* Light Gray Background */
+    background-color: #a9a9a9; /* Light Gray Background */
     color: #333; /* Darker Text for Contrast */
 }
 
-body.dark-mode .floating-card {
-    background-color: #e6e6e6; /* Slightly lighter gray for cards */
+body.dark-mode .card {
+    background-color: #bdbdbd; /* Slightly lighter gray for cards */
     border-color: #ccc; /* Border color adjusted for contrast */
 }
 
-body.dark-mode .floating-card h3 {
+body.dark-mode .card h3 {
     color: #000; /* Dark text for headers */
 }
 
-body.dark-mode .floating-card p {
+body.dark-mode .card p {
     color: #444; /* Softer text for descriptions */
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #e6e6e6; /* Consistent light gray for footer and header */
+    background-color: #bdbdbd; /* Consistent light gray for footer and header */
     color: #333;
 }
 
 body.dark-mode .hero {
-    background-color: #e6e6e6;
+    background-color: #bdbdbd;
     color: #333;
 }
 
@@ -240,7 +240,7 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #d3d3d3; /* Light gray for sections */
+    background-color: #a9a9a9; /* Light gray for sections */
     color: #333;
 }
 
