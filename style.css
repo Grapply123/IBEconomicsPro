@@ -201,41 +201,41 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #d3d3d3; /* Updated to a lighter gray */
-    color: #333; /* Adjusted text for better contrast */
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 body.dark-mode .floating-card {
-    background-color: #e0e0e0; /* Slightly lighter gray for cards */
-    border-color: #bdbdbd; /* Adjusted card border */
+    background-color: #1e1e1e;
+    border-color: #333;
 }
 
 body.dark-mode .floating-card h3 {
-    color: #333; /* Darker text for headers */
+    color: #e0e0e0;
 }
 
 body.dark-mode .floating-card p {
-    color: #444; /* Softer text for descriptions */
+    color: #a0a0a0;
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #e0e0e0; /* Matching lighter gray for consistency */
-    color: #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 body.dark-mode .hero {
-    background-color: #d3d3d3;
-    color: #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(0, 0, 0, 0.1); /* Lighter overlay for better readability */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .hero h1,
 body.dark-mode .hero p {
-    color: #333;
+    color: #e0e0e0;
 }
 
 body.dark-mode .hero .cta-button {
@@ -244,16 +244,15 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #d3d3d3; /* Lighter gray for sections */
-    color: #333;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 body.dark-mode .about h2,
 body.dark-mode .overview h2 {
-    color: var(--primary-color); /* Highlight headers with primary color */
+    color: var(--accent-color);
 }
 
 body.dark-mode .about p,
 body.dark-mode .overview p {
-    color: #444;
-}
+    color: #a0a0a0;
