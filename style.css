@@ -22,7 +22,13 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.75;
+    line-height: 1.85; /* Unified spacing for better readability */
+}
+
+/* Paragraph Styling for Consistency */
+p {
+    margin-bottom: 1.5em; /* Consistent spacing between paragraphs */
+    text-indent: 2em; /* Apply indentation globally */
 }
 
 /* Anchor Links */
@@ -88,21 +94,6 @@ header nav ul li a:hover {
 .hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.hero .cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.hero .cta-button:hover {
-    background-color: #ff5733;
 }
 
 /* About Section */
@@ -123,8 +114,6 @@ header nav ul li a:hover {
     color: var(--text-light-color);
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    line-height: 1.8;
 }
 
 /* Overview Section */
@@ -134,10 +123,15 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-overview h2 {
+.overview h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: var(--primary-color);
+}
+
+.overview p {
+    margin-bottom: 1.5em;
+    text-indent: 2em;
 }
 
 /* Cards Container */
@@ -168,7 +162,7 @@ overview h2 {
     margin-bottom: 10px;
 }
 
-floating-card p {
+.floating-card p {
     font-size: 1em;
     color: var(--text-light-color);
 }
@@ -201,12 +195,12 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #2a2a2a; /* Slightly darker gray for background */
+    background-color: #2a2a2a; /* Slightly darker gray */
     color: #e0e0e0;
 }
 
 body.dark-mode .floating-card {
-    background-color: #383838; /* Slightly darker gray for cards */
+    background-color: #383838;
     border-color: #4a4a4a;
 }
 
@@ -220,7 +214,7 @@ body.dark-mode .floating-card p {
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #383838; /* Matching lighter gray for consistency */
+    background-color: #383838;
     color: #e0e0e0;
 }
 
@@ -230,7 +224,7 @@ body.dark-mode .hero {
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(0, 0, 0, 0.5); /* Maintain lighter overlay for readability */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .hero h1,
@@ -238,13 +232,9 @@ body.dark-mode .hero p {
     color: #e0e0e0;
 }
 
-body.dark-mode .hero .cta-button {
-    background-color: var(--accent-color);
-}
-
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #2a2a2a; /* Slightly darker gray for sections */
+    background-color: #2a2a2a;
     color: #e0e0e0;
 }
 
