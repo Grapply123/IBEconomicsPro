@@ -22,9 +22,10 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.75;
 }
 
+/* Anchor Links */
 a {
     text-decoration: none;
     color: var(--primary-color);
@@ -87,6 +88,7 @@ header nav ul li a:hover {
 .hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .hero .cta-button {
@@ -121,7 +123,8 @@ header nav ul li a:hover {
     color: var(--text-light-color);
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 /* Overview Section */
@@ -146,8 +149,8 @@ header nav ul li a:hover {
     margin-top: 20px;
 }
 
-/* Card Design */
-.card {
+/* Floating Card Design */
+.floating-card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--card-border-color);
     border-radius: 8px;
@@ -156,23 +159,24 @@ header nav ul li a:hover {
     width: 280px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
-.card h3 {
+.floating-card h3 {
     font-size: 1.5em;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.card p {
+.floating-card p {
     font-size: 1em;
     color: var(--text-light-color);
 }
 
-/* Card Hover Effect */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px var(--shadow-color);
+/* Floating Card Hover Effect */
+.floating-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 15px var(--shadow-color);
 }
 
 /* Footer */
@@ -197,36 +201,36 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #a9a9a9; /* Light Gray Background */
-    color: #333; /* Darker Text for Contrast */
+    background-color: #d3d3d3; /* Updated to a lighter gray */
+    color: #333; /* Adjusted text for better contrast */
 }
 
-body.dark-mode .card {
-    background-color: #bdbdbd; /* Slightly lighter gray for cards */
-    border-color: #ccc; /* Border color adjusted for contrast */
+body.dark-mode .floating-card {
+    background-color: #e0e0e0; /* Slightly lighter gray for cards */
+    border-color: #bdbdbd; /* Adjusted card border */
 }
 
-body.dark-mode .card h3 {
-    color: #000; /* Dark text for headers */
+body.dark-mode .floating-card h3 {
+    color: #333; /* Darker text for headers */
 }
 
-body.dark-mode .card p {
+body.dark-mode .floating-card p {
     color: #444; /* Softer text for descriptions */
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #bdbdbd; /* Consistent light gray for footer and header */
+    background-color: #e0e0e0; /* Matching lighter gray for consistency */
     color: #333;
 }
 
 body.dark-mode .hero {
-    background-color: #bdbdbd;
+    background-color: #d3d3d3;
     color: #333;
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(0, 0, 0, 0.1); /* Light overlay for better readability */
+    background: rgba(0, 0, 0, 0.1); /* Lighter overlay for better readability */
 }
 
 body.dark-mode .hero h1,
@@ -240,37 +244,16 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #a9a9a9; /* Light gray for sections */
+    background-color: #d3d3d3; /* Lighter gray for sections */
     color: #333;
 }
 
 body.dark-mode .about h2,
 body.dark-mode .overview h2 {
-    color: var(--primary-color); /* Primary color for headers */
+    color: var(--primary-color); /* Highlight headers with primary color */
 }
 
 body.dark-mode .about p,
 body.dark-mode .overview p {
     color: #444;
-}
-
-/* General Adjustments for Dark Mode */
-body.dark-mode a {
-    color: var(--primary-color); /* Highlight links with the primary color */
-}
-
-body.dark-mode a:hover {
-    color: #3e497a; /* Slightly darker hover effect */
-}
-
-body.dark-mode .cta-button:hover {
-    background-color: #ff4500; /* Adjust hover color for buttons */
-}
-
-body.dark-mode .cards-container {
-    gap: 30px; /* Increase spacing between cards in dark mode */
-}
-
-body.dark-mode h2 {
-    color: #000; /* Ensure all section headers stand out */
 }
