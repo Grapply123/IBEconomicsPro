@@ -22,10 +22,9 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.75;
+    line-height: 1.6;
 }
 
-/* Anchor Links */
 a {
     text-decoration: none;
     color: var(--primary-color);
@@ -88,7 +87,6 @@ header nav ul li a:hover {
 .hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
-    line-height: 1.5;
 }
 
 .hero .cta-button {
@@ -123,8 +121,7 @@ header nav ul li a:hover {
     color: var(--text-light-color);
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 20px;
-    line-height: 1.8;
+    margin-bottom: 10px;
 }
 
 /* Overview Section */
@@ -149,8 +146,8 @@ header nav ul li a:hover {
     margin-top: 20px;
 }
 
-/* Floating Card Design */
-.floating-card {
+/* Card Design */
+.card {
     background-color: var(--card-bg-color);
     border: 1px solid var(--card-border-color);
     border-radius: 8px;
@@ -159,24 +156,23 @@ header nav ul li a:hover {
     width: 280px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
 }
 
-.floating-card h3 {
+.card h3 {
     font-size: 1.5em;
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.floating-card p {
+.card p {
     font-size: 1em;
     color: var(--text-light-color);
 }
 
-/* Floating Card Hover Effect */
-.floating-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 15px var(--shadow-color);
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
 }
 
 /* Footer */
@@ -201,41 +197,41 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #2a2a2a; /* Dark Gray Background */
+    color: #e0e0e0; /* Light Gray Text */
 }
 
 body.dark-mode .floating-card {
-    background-color: #1e1e1e;
-    border-color: #333;
+    background-color: #3a3a3a; /* Slightly lighter gray for cards */
+    border-color: #555; /* Border color adjusted for contrast */
 }
 
 body.dark-mode .floating-card h3 {
-    color: #e0e0e0;
+    color: #ffffff; /* Bright text for headers */
 }
 
 body.dark-mode .floating-card p {
-    color: #a0a0a0;
+    color: #c0c0c0; /* Softer text for descriptions */
 }
 
 body.dark-mode footer,
 body.dark-mode header {
-    background-color: #1e1e1e;
+    background-color: #3a3a3a; /* Consistent gray for footer and header */
     color: #e0e0e0;
 }
 
 body.dark-mode .hero {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+    background-color: #3a3a3a;
+    color: #ffffff;
 }
 
 body.dark-mode .hero-overlay {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Light overlay for better readability */
 }
 
 body.dark-mode .hero h1,
 body.dark-mode .hero p {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 body.dark-mode .hero .cta-button {
@@ -244,16 +240,37 @@ body.dark-mode .hero .cta-button {
 
 body.dark-mode .about,
 body.dark-mode .overview {
-    background-color: #1e1e1e;
+    background-color: #2a2a2a; /* Dark gray for sections */
     color: #e0e0e0;
 }
 
 body.dark-mode .about h2,
 body.dark-mode .overview h2 {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Accent color for headers */
 }
 
 body.dark-mode .about p,
 body.dark-mode .overview p {
-    color: #a0a0a0;
+    color: #c0c0c0;
+}
+
+/* General Adjustments for Dark Mode */
+body.dark-mode a {
+    color: var(--accent-color); /* Highlight links with the accent color */
+}
+
+body.dark-mode a:hover {
+    color: #ff5733; /* Slightly brighter hover effect */
+}
+
+body.dark-mode .cta-button:hover {
+    background-color: #ff4500; /* Adjust hover color for buttons */
+}
+
+body.dark-mode .cards-container {
+    gap: 30px; /* Increase spacing between cards in dark mode */
+}
+
+body.dark-mode h2 {
+    color: #ffffff; /* Ensure all section headers stand out */
 }
