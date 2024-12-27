@@ -9,7 +9,6 @@
     --card-bg-color: #fff;
     --card-border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --overlay-text-color: #f4f4f9; /* Adjusted for better visibility */
 }
 
 /* Reset CSS */
@@ -23,7 +22,7 @@ body {
     font-family: 'Rasa', serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.8; /* Improved text spacing */
+    line-height: 1.6;
 }
 
 a {
@@ -69,7 +68,7 @@ header nav ul li a:hover {
     background-position: center;
     padding: 100px 20px;
     text-align: center;
-    color: var(--overlay-text-color); /* Improved text color on images */
+    color: #fff;
     position: relative;
 }
 
@@ -78,11 +77,6 @@ header nav ul li a:hover {
     padding: 40px;
     border-radius: 8px;
     display: inline-block;
-}
-
-.hero h1,
-.hero p {
-    color: #f4f4f9; /* Ensure proper contrast for readability */
 }
 
 .hero h1 {
@@ -102,12 +96,11 @@ header nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1em;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .hero .cta-button:hover {
     background-color: #ff5733;
-    transform: translateY(-3px);
 }
 
 /* About Section */
@@ -128,7 +121,7 @@ header nav ul li a:hover {
     color: var(--text-light-color);
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Overview Section */
@@ -163,7 +156,6 @@ header nav ul li a:hover {
     width: 280px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
 }
 
 .card h3 {
@@ -179,15 +171,8 @@ header nav ul li a:hover {
 
 /* Card Hover Effect */
 .card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 10px 15px var(--shadow-color);
-    background-color: #f0f4f8;
-}
-
-/* Card Active (Click) Effect */
-.card:active {
-    transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
 }
 
 /* Footer */
@@ -224,17 +209,5 @@ body.dark-mode .card {
 body.dark-mode footer,
 body.dark-mode header {
     background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-
-body.dark-mode .hero,
-body.dark-mode .hero h1,
-body.dark-mode .hero p {
-    color: #e0e0e0;
-}
-
-body.dark-mode .about,
-body.dark-mode .about h2,
-body.dark-mode .about p {
     color: #e0e0e0;
 }
