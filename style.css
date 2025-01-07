@@ -25,6 +25,12 @@ body {
     line-height: 1.85; /* Unified spacing for better readability */
 }
 
+/* Ensure images scale properly */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Paragraph Styling for Consistency */
 p {
     margin-bottom: 1.5em; /* Consistent spacing between paragraphs */
@@ -195,7 +201,7 @@ footer a:hover {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #2a2a2a; /* Slightly darker gray */
+    background-color: #2a2a2a;
     color: #e0e0e0;
 }
 
@@ -246,4 +252,24 @@ body.dark-mode .overview h2 {
 body.dark-mode .about p,
 body.dark-mode .overview p {
     color: #bcbcbc;
-} 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .floating-card {
+        width: 100%;
+    }
+}
